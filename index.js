@@ -5,6 +5,7 @@ const averages = require('./ScoreCalcs/averages.js');
 const printAll = require('./display.js');
 const randomSelect = require('./randomSelect.js');
 //Candidate data:
+console.log(typeof randomSelect)
 let astronauts = ['Fox','Turtle','Cat','Hippo','Dog'];
 
 const testTitles = ['Math','Fitness','Coding','Nav','Communication'];
@@ -30,7 +31,8 @@ for (let i = 0; i<prompts.length; i++){
         console.log(`${astronauts[j]}'s test average = ${avg}%.`);
       }
     } else {
-      let walker = randomSelect.randomSelection(astronauts);//Call 'randomSelect' to pick a spacewalker from the astronauts array.
+      let walker = randomSelect(astronauts);
+      
       console.log(`${walker} is the next spacewalker.`);
     }
   } else {
