@@ -4,4 +4,4 @@
 }
 
 //TODO: Export the randomFromArray function.
-module.export = randomSelection;
+module.exports = randomSelection;

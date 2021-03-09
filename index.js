@@ -3,7 +3,7 @@
 const input = require("readline-sync");
 const averages = require('./ScoreCalcs/averages.js');
 const printAll = require('./display.js');
-const randomSelect = require('./randomSelect');
+const randomSelect = require('./randomSelect.js');
 //Candidate data:
 let astronauts = ['Fox','Turtle','Cat','Hippo','Dog'];
 
@@ -21,16 +21,16 @@ for (let i = 0; i<prompts.length; i++){
       printAll(astronauts, testTitles, scores);
     } else if (i===1){
       for (let j = 0; j<testTitles.length; j++){
-        let avg = averages.averageForTest(j);//Call 'averageForTest' here. Pass in j and scores as arguments.
+        let avg = averages.averageForTest(j, scores);
         console.log(`${testTitles[j]} test average = ${avg}%.`);
       }
     } else if (i===2){
       for (let j = 0; j<astronauts.length; j++){
-        let avg = //Call 'averageForStudent' here. Pass in j and scores as arguments.
+        let avg = averages.averageForStudent(j, scores);
         console.log(`${astronauts[j]}'s test average = ${avg}%.`);
       }
     } else {
-      let walker = //Call 'randomSelect' to pick a spacewalker from the astronauts array.
+      let walker = randomSelect.randomSelection(astronauts);//Call 'randomSelect' to pick a spacewalker from the astronauts array.
       console.log(`${walker} is the next spacewalker.`);
     }
   } else {
